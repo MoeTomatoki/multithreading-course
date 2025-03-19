@@ -1,7 +1,7 @@
-package march;
+package march.task9;
 
-public class tasks9 {
-
+public class task9 {
+// java march/task9/task 9
     private static final int NUM_STEPS = Integer.MAX_VALUE;
     private static volatile boolean isInterrupted = false;
     private static double pi = 0.0;

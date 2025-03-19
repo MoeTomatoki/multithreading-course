@@ -1,7 +1,7 @@
-package march;
+package march.task8;
 
 public class task8 {
-
+// java march/task8/task8 4
     private static final int NUM_STEPS = 200000000; // Количество итераций
     private static double pi = 0.0;
 

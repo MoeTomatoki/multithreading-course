@@ -3,7 +3,7 @@ package march;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class tasks10 {
+public class task10 {
 
     private static final int PHILO = 5;
     private static final int FOOD = 50;
@@ -27,7 +27,7 @@ public class tasks10 {
         int leftFork = id;
         int rightFork = (id + 1) % PHILO;
 
-        System.out.println("Философ " + id++ + "приступил к приему пищи");
+        System.out.println("Философ " + ++id + " сел за стол");
 
         while (true) {
             int dish = getFood();
@@ -35,7 +35,7 @@ public class tasks10 {
                 break;
             }
 
-            System.out.println("Философ " + id++ + ": приступил к приему пищи номер " + dish++);
+                System.out.println("Философ " + id + ": взял процию и осталось " + dish);
 
             if (id % 2 == 0) {
                 takeFork(id, leftFork, "левая");
@@ -45,21 +45,20 @@ public class tasks10 {
                 takeFork(id, leftFork, "левая");
             }
 
-            System.out.println("Философ " + id++ + ": ест.");
+            System.out.println("Философ " + id + ": сейчас ест");
             try {
                 Thread.sleep(DELAY * (FOOD - dish + 1));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            // Освобождение вилок
             releaseFork(leftFork);
             releaseFork(rightFork);
 
-            System.out.println("Философ " + id++ + " закончил есть");
+            System.out.println("Философ " + id + " закончил с порцией");
         }
 
-        System.out.println("Философ  " + id++ + " покинул общий стол");
+        System.out.println("Философ " + id + " покинул стол");
     }
 
     private static synchronized int getFood() {
@@ -72,7 +71,7 @@ public class tasks10 {
 
     private static void takeFork(int philosopherId, int forkId, String hand) {
         forks[forkId].lock();
-        System.out.println("Philosopher " + philosopherId + ": got " + hand + " fork " + forkId);
+        System.out.println("Философ " + philosopherId + ": взял " + hand + "рукой" + " вилку " + ++forkId);
     }
 
     private static void releaseFork(int forkId) {

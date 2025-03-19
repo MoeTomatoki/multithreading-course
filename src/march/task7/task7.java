@@ -1,4 +1,4 @@
-package march.tasks7;
+package march.task7;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class task7 {
+// java -cp src march.task7.task7 C:\Users\dj-pr\IdeaProjects\multithreading-course\src\march\task7\copy_from C:\Users\dj-pr\IdeaProjects\multithreading-course\src\march\task7\copy_to
 
     private static final ExecutorService executor = Executors.newCachedThreadPool();
 
